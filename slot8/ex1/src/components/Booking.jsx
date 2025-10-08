@@ -1,23 +1,37 @@
+import { useState } from "react";
+
 export default function Booking() {
+  const [service, setService] = useState("Choose a service");
+
   return (
-    <section className="py-5 text-white" style={{ backgroundColor: "#343a40" }}>
+    <section
+      className="py-5 text-white"
+      style={{
+        background: "linear-gradient(135deg, #343a40, #1a0000)", // đỏ thẫm + đen
+      }}
+    >
       <div className="container">
         {/* Title */}
         <div className="text-center mb-5">
-          <h2 className="fw-bold display-6 text-warning">Reserve Your Table</h2>
+          <h2 className="fw-bold display-6 text-danger">Reserve Your Table</h2>
           <p className="text-light">
-            Plan your perfect dining experience with us — quick and easy.
+            Enjoy authentic flavors — book your spot now.
           </p>
         </div>
 
         {/* Form */}
-        <form className="row g-4 bg-dark bg-opacity-75 p-4 rounded-4 shadow-lg">
+        <form
+          className="row g-4 p-4 rounded-4 shadow-lg"
+          style={{
+            backgroundColor: "rgba(3, 14, 34, 0.9)", // đỏ trong suốt
+          }}
+        >
           {/* Name */}
           <div className="col-md-4">
-            <label className="form-label">Name</label>
+            <label className="form-label text-warning">Name</label>
             <input
               type="text"
-              className="form-control form-control-lg rounded-pill"
+              className="form-control form-control-lg rounded-pill bg-dark text-white border-0"
               placeholder="Enter your name"
               required
             />
@@ -25,31 +39,49 @@ export default function Booking() {
 
           {/* Email */}
           <div className="col-md-4">
-            <label className="form-label">Email</label>
+            <label className="form-label text-warning">Email</label>
             <input
               type="email"
-              className="form-control form-control-lg rounded-pill"
+              className="form-control form-control-lg rounded-pill bg-dark text-white border-0"
               placeholder="Enter your email"
               required
             />
           </div>
 
-          {/* Service */}
+          {/* Service - dropdown button */}
           <div className="col-md-4">
-            <label className="form-label">Service</label>
-            <select className="form-select form-select-lg rounded-pill" required>
-              <option value="">Choose a service</option>
-              <option>Lunch</option>
-              <option>Dinner</option>
-              <option>Birthday Party</option>
-            </select>
+            <label className="form-label text-warning">Service</label>
+            <div className="dropdown">
+              <button
+                className="btn btn-danger btn-lg w-100 rounded-pill dropdown-toggle fw-bold"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                {service}
+              </button>
+              <ul className="dropdown-menu w-100 bg-dark text-white">
+                {["Lunch", "Dinner", "Birthday Party"].map((item) => (
+                  <li key={item}>
+                    <button
+                      className="dropdown-item text-white"
+                      type="button"
+                      onClick={() => setService(item)}
+                      style={{ background: "transparent" }}
+                    >
+                      {item}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Comment */}
           <div className="col-12">
-            <label className="form-label">Comment</label>
+            <label className="form-label text-warning">Comment</label>
             <textarea
-              className="form-control rounded-4"
+              className="form-control rounded-4 bg-dark text-white border-0"
               rows="4"
               placeholder="Tell us any special requests"
             ></textarea>
@@ -59,7 +91,11 @@ export default function Booking() {
           <div className="col-12 text-center">
             <button
               type="submit"
-              className="btn btn-warning btn-lg px-5 rounded-pill shadow-sm fw-bold"
+              className="btn btn-danger btn-lg px-5 rounded-pill shadow-sm fw-bold"
+              style={{
+                backgroundColor: "#b30000",
+                border: "none",
+              }}
             >
               Book Now
             </button>

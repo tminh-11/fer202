@@ -1,0 +1,79 @@
+/* ===== Movie Footer Styling ===== */
+.movie-footer {
+  background: linear-gradient(180deg, #0b0c10 0%, #141414 100%);
+  color: #ccc;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 1px solid #222;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.4px;
+}
+
+/* Layout container */
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Desktop layout */
+@media (min-width: 768px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
+
+/* Logo & Info */
+.footer-logo {
+  color: #ffcc00;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-author span {
+  color: #fff;
+  font-weight: 500;
+}
+
+.footer-email a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+.footer-email a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* GitHub link button */
+.github-link {
+  color: #ffcc00 !important;
+  text-decoration: none !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.github-link:hover {
+  color: #ffffff !important;
+  transform: scale(1.05);
+}
+
+/* Bottom bar */
+.footer-bottom {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #777;
+  border-top: 1px solid #333;
+  padding-top: 0.8rem;
+}
+
+.footer-bottom p {
+  margin: 0;
+}

@@ -1,0 +1,48 @@
+.homepage {
+  background-color: #0d1117;
+  min-height: 100vh;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+.carousel {
+  max-width: 1000px;
+  margin: 3rem auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.carousel img {
+  height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.carousel img:hover {
+  transform: scale(1.02);
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  bottom: 20px;
+}
+
+.carousel-caption h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+.carousel-caption .badge {
+  font-size: 1rem;
+  padding: 0.4rem 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.container {
+  margin-bottom: 4rem;
+}
