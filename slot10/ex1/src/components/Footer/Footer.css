@@ -1,10 +1,11 @@
-/* ===== Movie Footer Styling ===== */
+/* ====== Footer Section ====== */
 .movie-footer {
-  background: linear-gradient(180deg, #0b0c10 0%, #141414 100%);
+  background: linear-gradient(180deg, #0b0c10 0%, #1a1a1a 100%);
   color: #ccc;
   text-align: center;
-  padding: 2rem 1rem;
-  border-top: 1px solid #222;
+  padding: 2.5rem 1rem;
+  border-top: 2px solid #e50914;
+  box-shadow: 0 -5px 20px rgba(229, 9, 20, 0.3);
   font-family: "Poppins", sans-serif;
   letter-spacing: 0.4px;
 }
@@ -23,18 +24,19 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    text-align: left;
     max-width: 1000px;
     margin: 0 auto;
+    text-align: left;
   }
 }
 
 /* Logo & Info */
 .footer-logo {
   color: #ffcc00;
-  font-weight: 700;
-  font-size: 1.5rem;
+  font-weight: 800;
+  font-size: 1.7rem;
   margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
 }
 
 .footer-author span {
@@ -43,12 +45,14 @@
 }
 
 .footer-email a {
-  color: #ffcc00;
+  color: #e50914;
   text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .footer-email a:hover {
-  color: #fff;
+  color: #ffcc00;
   text-decoration: underline;
 }
 
@@ -62,18 +66,19 @@
 
 .github-link:hover {
   color: #ffffff !important;
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 /* Bottom bar */
 .footer-bottom {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   font-size: 0.9rem;
-  color: #777;
+  color: #999;
   border-top: 1px solid #333;
   padding-top: 0.8rem;
 }
 
 .footer-bottom p {
   margin: 0;
+  letter-spacing: 0.5px;
 }

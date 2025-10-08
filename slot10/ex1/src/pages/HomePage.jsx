@@ -1,24 +1,18 @@
 // src/pages/HomePage.jsx
 import React from "react";
 import HomeCarousel from "../components/Home/HomeCarousel";
-import "../components/Home/HomeCarousel.css";
+import "./HomePage.css";
 
 export default function HomePage() {
   return (
     <div className="homepage">
-      {/* Hero Carousel */}
-      <section className="home-carousel">
-        <HomeCarousel />
-      </section>
+      <HomeCarousel />
 
-      {/* About Section */}
-      <section className="container text-center my-5">
-        <h2 className="fw-bold display-5 text-light mb-3">
-          Welcome to <span className="text-warning">Movie Management</span>
-        </h2>
-        <p className="text-secondary lead" style={{ maxWidth: 700, margin: "0 auto" }}>
-          Discover and manage your favorite movies. Track collections, explore genres,
-          and keep everything organized — all in one cinematic platform.
+      <section className="featured-section text-center">
+        <h4 className="fw-bold text-warning mt-5">🎬 Featured Movie Collections</h4>
+        <p className="text-light mx-auto" style={{ maxWidth: "700px" }}>
+          Explore the best cinematic masterpieces that define storytelling — sci-fi journeys, heroic
+          battles, and breathtaking adventures.
         </p>
       </section>
     </div>
