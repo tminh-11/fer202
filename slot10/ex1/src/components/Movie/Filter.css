@@ -1,0 +1,54 @@
+/* src/components/Movie/Filter.css */
+.filter-card {
+  background: rgba(20, 20, 20, 0.95);
+  border: 1px solid #333;
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.05);
+  padding: 0.5rem 1rem;
+}
+
+.filter-card .form-control,
+.filter-card .form-select {
+  background-color: #1a1a1a;
+  color: #ddd;
+  border: 1px solid #333;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.filter-card .form-control:focus,
+.filter-card .form-select:focus {
+  border-color: #ffcc00;
+  box-shadow: 0 0 8px #ffcc0077;
+  background-color: #1e1e1e;
+}
+
+.filter-card .btn {
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.filter-card .btn-warning {
+  background-color: #ffcc00;
+  border: none;
+  color: #000;
+  transition: 0.3s;
+}
+
+.filter-card .btn-warning:hover {
+  background-color: #ffd84d;
+  color: #000;
+}
+
+.filter-card .btn-outline-light {
+  border-color: #888;
+  color: #ccc;
+  transition: 0.3s;
+}
+
+.filter-card .btn-outline-light:hover {
+  border-color: #ffcc00;
+  color: #ffcc00;
+}

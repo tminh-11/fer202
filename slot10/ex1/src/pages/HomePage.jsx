@@ -1,20 +1,32 @@
 // src/pages/HomePage.jsx
-import React from "react";
+import React, { useState } from "react";
+import NavBar from "../components/Navbar/Navbar";
 import HomeCarousel from "../components/Home/HomeCarousel";
-import "./HomePage.css";
+import Filter from "../components/Movie/Filter";
+import MoviePage from "./MoviePage";
+import MyFooter from "../components/Footer/MyFooter";
 
 export default function HomePage() {
-  return (
-    <div className="homepage">
-      <HomeCarousel />
+  const [filters, setFilters] = useState({});
 
-      <section className="featured-section text-center">
-        <h4 className="fw-bold text-warning mt-5">🎬 Featured Movie Collections</h4>
-        <p className="text-light mx-auto" style={{ maxWidth: "700px" }}>
-          Explore the best cinematic masterpieces that define storytelling — sci-fi journeys, heroic
-          battles, and breathtaking adventures.
-        </p>
-      </section>
+  const handleApply = (f) => {
+    setFilters(f);
+    console.log("Applied filters:", f);
+  };
+
+  return (
+    <div style={{ background: "#000", minHeight: "100vh", color: "#fff" }}>
+      <NavBar />
+      <HomeCarousel />
+      <div className="container py-4">
+        <Filter onApply={handleApply} />
+        <MoviePage filters={filters} />
+      </div>
+      <MyFooter
+        author="MinhNHT"
+        email="nickpospast@gmail.com"
+        linkGithub="Movie Management Project"
+      />
     </div>
   );
 }

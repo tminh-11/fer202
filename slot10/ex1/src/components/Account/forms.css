@@ -1,0 +1,72 @@
+/* 🎬 Movie-themed CSS for Account, About, and Address forms */
+
+.form-card {
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 215, 0, 0.15);
+  border-radius: 16px;
+  padding: 2rem;
+  color: #f1f1f1;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+.form-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 35px rgba(255, 215, 0, 0.15);
+}
+
+/* Labels and placeholders */
+.form-card .form-label {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #ffc107;
+}
+
+.form-card .form-control,
+.form-card .form-select {
+  background-color: #121212;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+
+.form-card .form-control:focus,
+.form-card .form-select:focus {
+  border-color: #ffc107;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  background-color: #1e1e1e;
+}
+
+/* Input icons (for AccountForm) */
+.input-group-text {
+  background: rgba(255, 215, 0, 0.1);
+  color: #ffc107;
+  border: none;
+  font-size: 1.2rem;
+}
+
+/* File input customization */
+input[type="file"] {
+  color: #ddd;
+  cursor: pointer;
+}
+input[type="file"]::file-selector-button {
+  background-color: #ffc107;
+  color: #000;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+input[type="file"]::file-selector-button:hover {
+  background-color: #e0a800;
+}
+
+/* Validation messages */
+.form-card .invalid-feedback {
+  color: #ff5c5c;
+  font-weight: 500;
+}

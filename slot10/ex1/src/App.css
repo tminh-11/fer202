@@ -36,3 +36,38 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  background: radial-gradient(circle at top, #111 0%, #000 100%);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.page-container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.5rem;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f5c518;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+

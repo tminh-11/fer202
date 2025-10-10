@@ -1,0 +1,154 @@
+.movie-card {
+  background: linear-gradient(145deg, rgba(25,25,25,0.9), rgba(15,15,15,0.8));
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  color: #fff;
+  position: relative;
+}
+
+.movie-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 16px 45px rgba(255, 217, 0, 0.3);
+}
+
+.movie-poster {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  filter: brightness(0.85);
+  transition: filter 0.3s ease;
+}
+
+.movie-card:hover .movie-poster {
+  filter: brightness(1);
+}
+
+.movie-info {
+  padding: 1.2rem;
+  backdrop-filter: blur(4px);
+}
+
+.movie-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #f5c518;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.movie-desc {
+  font-size: 0.9rem;
+  color: #bfbfbf;
+  line-height: 1.5;
+  max-height: 3.6em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* === MODAL STYLING === */
+.modal-content {
+  background: radial-gradient(circle at top left, #111 0%, #000 100%);
+  color: #eee;
+  border: 1px solid rgba(255, 215, 0, 0.15);
+  border-radius: 14px;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.12);
+  overflow: hidden;
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+  background: linear-gradient(135deg, #181818, #101010);
+  color: #f5c518;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+
+.modal-body {
+  background: rgba(10, 10, 10, 0.95);
+  border-radius: 0 0 14px 14px;
+  padding: 1.8rem;
+}
+
+.modal-body img {
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.08);
+  transition: transform 0.3s;
+}
+
+.modal-body img:hover {
+  transform: scale(1.03);
+}
+
+.modal-body p {
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.modal-body strong {
+  color: #f5c518;
+}
+
+.modal-body ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.5rem;
+}
+
+.modal-body li {
+  background: rgba(255, 215, 0, 0.08);
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  display: inline-block;
+  margin-right: 0.4rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.modal-footer {
+  border-top: 1px solid rgba(255, 215, 0, 0.12);
+  background-color: #0a0a0a;
+}
+
+/* Close Button */
+.modal-header .btn-close {
+  filter: invert(1) brightness(1.8);
+}
+
+/* === TOAST === */
+.toast {
+  background: rgba(30, 30, 30, 0.9);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+}
+
+/* === VIEW DETAILS LAYOUT === */
+.movie-details-body {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.movie-details-body img {
+  width: 240px;
+  height: auto;
+  object-fit: cover;
+}
+
+.movie-details-text {
+  flex: 1;
+}
+
+.movie-details-text hr {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 1rem 0;
+}
