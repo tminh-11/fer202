@@ -9,7 +9,7 @@ function LoginForm2() {
 
   // Xử lý thay đổi input
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target;
     setUser((prev) => ({ ...prev, [name]: value }));
 
     // Kiểm tra lỗi cho từng trường

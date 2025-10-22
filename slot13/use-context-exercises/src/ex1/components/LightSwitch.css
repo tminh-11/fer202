@@ -1,0 +1,58 @@
+/* ex1/components/LightSwitch.css */
+
+.light-container {
+  padding: 25px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+.light-container.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.light-container.dark {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.light-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.light-status {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.light-button {
+  margin: 5px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.light-button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.theme-toggle {
+  background: #6c757d;
+  color: white;
+}
+
+.theme-toggle.dark {
+  background: #f8f9fa;
+  color: #000;
+}

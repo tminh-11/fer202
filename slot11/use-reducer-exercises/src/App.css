@@ -1,0 +1,178 @@
+/* 🌈 Global Theme */
+body {
+  background-color: #f8f9fa;
+  font-family: "Poppins", sans-serif;
+  color: #212529;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 700;
+  color: #0d6efd;
+  margin-bottom: 25px;
+}
+
+/* 🧭 Navbar for Exercise Navigation */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+nav button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #0d6efd;
+  color: white;
+  cursor: pointer;
+  transition: 0.25s;
+  font-weight: 500;
+}
+
+nav button:hover {
+  background-color: #084298;
+  transform: translateY(-2px);
+}
+
+nav button:focus {
+  outline: none;
+}
+
+/* 🪄 Shared Card Style */
+.exercise-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exercise-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 🔢 CounterComponent */
+.counter-buttons button {
+  margin: 5px;
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+.counter-buttons .inc {
+  background-color: #198754;
+}
+
+.counter-buttons .dec {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.counter-buttons .reset {
+  background-color: #dc3545;
+}
+
+.counter-buttons button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* 💡 LightSwitch */
+.light {
+  background-color: #fff3cd;
+  color: #212529;
+}
+
+.dark {
+  background-color: #212529;
+  color: #f8f9fa;
+}
+
+/* 🔐 LoginForm and SignUpForm */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+}
+
+form button {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+form button:hover {
+  background-color: #084298;
+  transform: scale(1.02);
+}
+
+/* ❓ QuestionBank */
+.option-btn {
+  margin: 5px;
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.option-btn:hover {
+  background-color: #e9ecef;
+}
+
+.option-selected {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+}
+
+.feedback {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.feedback.correct {
+  color: #198754;
+}
+
+.feedback.incorrect {
+  color: #dc3545;
+}
+
+.progress-text {
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.timer {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.timer.warning {
+  color: #dc3545;
+}
