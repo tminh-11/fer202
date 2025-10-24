@@ -1,26 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-import React from "react";
+//áp dụng ThemeProvider để bao bọc toàn bộ ứng dụng
 import { ThemeProvider } from "./ex1/contexts/ThemeContext";
-import CounterComponent from "./ex1/components/CounterComponent";
 import LightSwitch from "./ex1/components/LightSwitch";
-import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import CounterComponent from "./ex1/components/CounterComponent";
+import { AuthProvider } from "./ex1/contexts/AuthContext";
+import LoginForm from "./ex1/components/LoginForm";
 
 function App() {
-  return (
-    <ThemeProvider>
-      <div
-        style={{
-          minHeight: "100vh",
-          padding: "20px",
-          transition: "all 0.3s ease",
-        }}
-      >
-        <CounterComponent />
-        <LightSwitch />
-      </div>
-    </ThemeProvider>
-  );
+  return (
+    <div>
+  <ThemeProvider>
+      <CounterComponent />
+      <LightSwitch />
+      </ThemeProvider>
+
+    <AuthProvider>
+    <div className="App">
+      <LoginForm />
+    </div>
+    </AuthProvider>
+    </div>
+  
+  );
 }
 
 export default App;
