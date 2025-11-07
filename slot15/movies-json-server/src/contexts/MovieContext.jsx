@@ -9,8 +9,12 @@ export const useMovieState = () => useContext(MovieStateContext);
 export const useMovieDispatch = () => useContext(MovieDispatchContext);
 
 export const MovieProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(movieReducer, initialMovieState);
+  const [state, dispatch] = useReducer(movieReducer, {
+    ...initialMovieState,
+    genres: [],
+  });
 
+  // ===== FETCH MOVIES =====
   const fetchMovies = useCallback(async () => {
     dispatch({ type: 'START_LOADING' });
     try {
@@ -19,6 +23,16 @@ export const MovieProvider = ({ children }) => {
     } catch (error) {
       console.error('Lỗi tải danh sách phim:', error);
       dispatch({ type: 'SET_MOVIES', payload: [] });
+    }
+  }, [dispatch]);
+
+  // ===== FETCH GENRES =====
+  const fetchGenres = useCallback(async () => {
+    try {
+      const res = await movieApi.get('/genres');
+      dispatch({ type: 'SET_GENRES', payload: res.data });
+    } catch (err) {
+      console.error('Lỗi tải thể loại:', err);
     }
   }, [dispatch]);
 
@@ -60,7 +74,8 @@ export const MovieProvider = ({ children }) => {
 
   useEffect(() => {
     fetchMovies();
-  }, [fetchMovies]);
+    fetchGenres();
+  }, [fetchMovies, fetchGenres]);
 
   const dispatchValue = { dispatch, fetchMovies, confirmDelete, handleCreateOrUpdate };
 

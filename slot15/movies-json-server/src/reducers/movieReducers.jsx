@@ -12,6 +12,8 @@ export const movieReducer = (state, action) => {
   switch (action.type) {
     case 'SET_MOVIES':
       return { ...state, movies: action.payload, loading: false };
+    case 'SET_GENRES':
+      return { ...state, genres: action.payload };
     case 'START_LOADING':
       return { ...state, loading: true };
     case 'UPDATE_FIELD':

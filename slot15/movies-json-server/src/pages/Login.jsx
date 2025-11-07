@@ -1,35 +1,31 @@
 import React, { useState } from 'react';
-import { Form, Button, Card, Alert, Container } from 'react-bootstrap';
+import { Form, Button, Card, Alert, Container, Modal } from 'react-bootstrap';
+import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [validated, setValidated] = useState(false);
   const [error, setError] = useState('');
+  const [showWelcome, setShowWelcome] = useState(false);
+  const { login } = useAuth();
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setValidated(true);
     setError('');
 
-    try {
-      const response = await axios.get('http://localhost:3001/accounts');
-      const users = response.data;
-      const user = users.find(
-        (u) => u.username === username && u.password === password
-      );
-
-      if (user) {
-        // Lưu thông tin vào localStorage
-        localStorage.setItem('loggedInUser', JSON.stringify(user));
-        navigate('/movies'); // Chuyển hướng tới trang quản lý phim
-      } else {
-        setError('❌ Sai tài khoản hoặc mật khẩu!');
-      }
-    } catch (err) {
-      console.error(err);
-      setError('Lỗi kết nối đến server!');
+    const user = await login(username, password);
+    if (!user) {
+      setError('❌ Sai tài khoản hoặc mật khẩu!');
+    } else {
+      setShowWelcome(true);
+      setTimeout(() => {
+        setShowWelcome(false);
+        navigate('/movies');
+      }, 1800);
     }
   };
 
@@ -37,28 +33,36 @@ const Login = () => {
     <Container className="d-flex justify-content-center align-items-center vh-100">
       <Card style={{ width: '380px', padding: '20px' }}>
         <h3 className="text-center mb-4">🎬 Đăng nhập hệ thống</h3>
+
         {error && <Alert variant="danger">{error}</Alert>}
-        <Form onSubmit={handleLogin}>
-          <Form.Group className="mb-3">
+
+        <Form noValidate validated={validated} onSubmit={handleSubmit}>
+          <Form.Group className="mb-3" controlId="username">
             <Form.Label>Tên đăng nhập</Form.Label>
             <Form.Control
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              placeholder="Nhập username"
               required
+              placeholder="Nhập username"
             />
+            <Form.Control.Feedback type="invalid">
+              Vui lòng nhập tên đăng nhập!
+            </Form.Control.Feedback>
           </Form.Group>
 
-          <Form.Group className="mb-3">
+          <Form.Group className="mb-3" controlId="password">
             <Form.Label>Mật khẩu</Form.Label>
             <Form.Control
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="Nhập password"
               required
+              placeholder="Nhập mật khẩu"
             />
+            <Form.Control.Feedback type="invalid">
+              Vui lòng nhập mật khẩu!
+            </Form.Control.Feedback>
           </Form.Group>
 
           <Button variant="primary" type="submit" className="w-100">
@@ -66,6 +70,13 @@ const Login = () => {
           </Button>
         </Form>
       </Card>
+
+      <Modal show={showWelcome} centered>
+        <Modal.Body className="text-center p-4">
+          <h4>🎉 Welcome, {username}!</h4>
+          <p>Đang chuyển đến trang quản lý phim...</p>
+        </Modal.Body>
+      </Modal>
     </Container>
   );
 };
