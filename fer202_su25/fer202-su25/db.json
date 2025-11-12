@@ -1,0 +1,38 @@
+{
+  "motorbikes": [
+    {
+      "id": "1",
+      "brand": "Honda",
+      "model": "CBR150R",
+      "year": 2023,
+      "price": 3500,
+      "image": "https://via.placeholder.com/300x200?text=CBR150R",
+      "stock": 4
+    },
+    {
+      "id": "2",
+      "brand": "Yamaha",
+      "model": "R15 V4",
+      "year": 2024,
+      "price": 4200,
+      "image": "https://via.placeholder.com/300x200?text=R15+V4",
+      "stock": 2
+    },
+    {
+      "id": "3",
+      "brand": "Suzuki",
+      "model": "GSX-R150",
+      "year": 2023,
+      "price": 3800,
+      "image": "https://via.placeholder.com/300x200?text=GSX-R150",
+      "stock": 0
+    }
+  ],
+  "users": [
+    {
+      "username": "admin",
+      "password": "123456",
+      "id": "bb6f"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+
+export const fetchVideos = createAsyncThunk('videos/fetchVideos', async () => {
+  const response = await axios.get('http://localhost:3001/videos');
+  return response.data;
+});
+
+const videoSlice = createSlice({
+  name: 'videos',
+  initialState: {
+    items: [],
+    status: 'idle',
+    error: null
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchVideos.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchVideos.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.items = action.payload;
+      })
+      .addCase(fetchVideos.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      });
+  }
+});
+
+export default videoSlice.reducer;
